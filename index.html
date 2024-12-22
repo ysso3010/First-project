@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق تسجيل المصروفات</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#007bff">
+</head>
+<body>
+
+    <h1> تسجيل المصروفات للأطفال</h1>
+
+    <!-- نموذج تسجيل بيانات الطفل -->
+    <form id="paymentForm">
+        <label for="name">اسم الطفل:</label>
+        <input type="text" id="name" required>
+
+        <label for="month">الشهر الذي دفع فيه:</label>
+        <input type="text" id="month" placeholder="مثال: يناير" required>
+
+        <label for="paymentStatus">هل دفع المصروفات؟</label>
+        <select id="paymentStatus" required>
+            <option value="yes">نعم</option>
+            <option value="no">لا</option>
+        </select>
+
+        <button type="submit">تسجيل البيانات</button>
+    </form>
+
+    <h2>بحث عن الطالب</h2>
+    <input type="text" id="searchName" placeholder="أدخل اسم الطالب للبحث" onkeyup="searchStudent()">
+    <div id="studentInfo"></div>
+
+    <!-- جدول الطلاب يظهر عند البحث فقط -->
+    <h2>قائمة الطلاب</h2>
+    <table id="studentsTable" style="display:none;">
+        <thead>
+            <tr>
+                <th>الاسم</th>
+                <th>الشهور المدفوعة</th>
+                <th>الشهور غير المدفوعة</th>
+                <th>التحكم</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="main.js"></script>
+</body>
+</html>
